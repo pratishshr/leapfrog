@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>
+Javascript Example 1
+</title>
+
+</head>
+<body>
+
+
+<a href="javascript:void(0)" onclick="window.print()">Print</a>
+<a href="javascript:void(0)" onclick="showDialog(true)">Show Dialog</a>
+<a href="javascript:void(0)" onclick="window.close()">Close Window</a>
+
+<div id="box" style="border:1px solid green;height:auto;width:300px;display:none">
+<div id="box-btn-close" style="float:right;cursor:pointer" onclick="showDialog(false)">Close</div>
+<div style="clear:both"></div>
+<form>
+<input type="text" placeHolder="Enter First Name"/><br/>
+<input type="text" placeHolder="Enter Last Name"/><br/>
+<input type="text" placeHolder="Enter Email"/><br/>
+<input type="text" placeHolder="Enter Contact No"/><br/>
+<input type="text" placeHolder="Enter Subject"/><br/>
+<textarea></textarea><br/>
+<button type="submit">Send</button>
+
+</form>
+
+</div>
+
+
+<script>
+
+document.write("Hello World")
+
+function showDialog(status){
+
+	var box=document.getElementById("box");
+	if(status){
+		box.style.display="block";
+	}
+	else{
+		box.style.display="none";
+	}
+
+	
+}
+
+
+
+</script>
+
+</body>
+</html>

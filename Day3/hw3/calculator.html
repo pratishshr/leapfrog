@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title>Calculator</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<form id="myform">
+	<input type="text" id="num1" name="num1" placeholder="number 1"><br/> 
+	<input type="text" id="num2" name="num2" placeholder="number 2">
+	<div id="result"></div>
+	<input type="button" id="btnp" value="Add">
+	<input type="button" id="btns" value="Sub">
+	<input type="button" id="btnm" value="Mul">
+	<input type="button" id="btnd" value="Div">
+</form>	
+</div>
+
+	<script>
+		var num1 = document.getElementById("num1"),num2 = document.getElementById("num2"), result= document.getElementById("result");
+
+
+		var btn = document.getElementById("btnp"),btns = document.getElementById("btns"),btnm = document.getElementById("btnm"),btnd = document.getElementById("btnd");
+		
+		function isNumber(evt) {
+			    evt = (evt) ? evt : window.event;
+			    var charCode = (evt.which) ? evt.which : evt.keyCode;
+			    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			        return false;
+			    }
+			    return true;
+			}
+
+		num1.onkeypress = function(e){
+			return isNumber(e);
+		}
+		num2.onkeypress = function(e){
+			return isNumber(e);
+		}
+		
+		btn.onclick = function(){
+			var x= parseInt(num1.value), y=parseInt(num2.value);
+
+			
+			if(isNaN(x) || isNaN(y)){
+				result.innerHTML= "Enter Number Only";
+			}else{
+				result.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+			}
+
+		}
+		btns.onclick = function(){
+			var x= parseInt(num1.value), y=parseInt(num2.value);
+
+			
+			if(isNaN(x) || isNaN(y)){
+				result.innerHTML= "Enter Number Only";
+			}else{
+				result.innerHTML = parseInt(num1.value) - parseInt(num2.value);
+			}
+
+		}
+		btnm.onclick = function(){
+			var x= parseInt(num1.value), y=parseInt(num2.value);
+
+			
+			if(isNaN(x) || isNaN(y)){
+				result.innerHTML= "Enter Number Only";
+			}else{
+				result.innerHTML = parseInt(num1.value) * parseInt(num2.value);
+			}
+
+		}
+		btnd.onclick = function(){
+			var x= parseInt(num1.value), y=parseInt(num2.value);
+
+			
+			if(isNaN(x) || isNaN(y)){
+				result.innerHTML= "Enter Number Only";
+			}else{
+				result.innerHTML = parseInt(num1.value) / parseInt(num2.value);
+			}
+
+		}
+
+
+		
+	</script>
+
+</body>
+</html>

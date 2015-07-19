@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>
+		jQuery Example
+		</title>
+		<script src="assets/js/jquery.min.js"></script>
+		<style>
+		.green{
+			color:green;
+			background-color:black
+		}
+
+		.red{
+			color:red;
+			background-color: yellow;
+		}
+		</style>		
+	</head>
+	<body>
+
+	<p class="green">One</p>
+	<p class="green">Two</p>
+	<p class="green">Three</p>
+	<p class="green">Four</p>
+
+	<input type="text" name="name" id="name" value="Hello world"/>
+
+	<div id="result">Loading</div>
+
+
+
+
+	<script>
+
+
+	$(document).on("ready",function(){
+
+		$("#name").on("keyup",function(){
+			$.get("data.php","name=" + $(this).val(),function(data){
+
+				if(data=="false"){
+					$('#result').html("Available").css("color","green");
+
+				}
+				else{
+					$('#result').html("Not Available").css("color","red");
+				}
+
+
+				
+			});		
+		});
+
+
+	});
+
+
+
+	</script>
+	</body>
+</html>

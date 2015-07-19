@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>
+		jQuery Example
+		</title>
+		<script src="assets/js/jquery.min.js"></script>
+
+		<style>
+		.green{
+			color:green;
+			background-color:black
+		}
+
+		.red{
+			color:red;
+			background-color: yellow;
+		}
+		</style>
+
+	</head>
+	<body>
+
+	<div id="box"></div>
+
+	<div id="btn">Hide</div>
+
+	<p class="green">One</p>
+	<p class="green">Two</p>
+	<p class="green">Three</p>
+	<p class="green">Four</p>
+
+<div class="green" style="position:absolute">Hello world</div>
+
+
+	<script>
+	$(document).ready(function(){
+
+		$("#box").html("Hello World from jQuery").css("border","1px solid red").css("height","300px");
+
+		$("#btn").on("click",function(){
+
+			var $btn=$(this);
+			var $box=$("#box");
+
+			if($btn.html()=='Hide'){
+				$box.slideUp();
+				$btn.html("Show");
+
+			}
+			else{
+				$box.slideDown();
+				$btn.html("Hide");
+			}
+
+		//.slideUp();
+
+
+		});
+
+		$("div.green").on("mouseover",function(){
+
+		 	$(this).removeClass("green").addClass("red").animate({
+				opacity:0.5,
+				left: '250px'
+			},5000,function(){
+				$(this).hide();
+			});			
+
+		})
+
+
+
+
+
+
+	});
+	</script
+
+	</body>
+</html>

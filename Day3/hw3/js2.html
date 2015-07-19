@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title> simple js 2</title>
+	<script>
+
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var txt = document.getElementById("txt");
+ 	h= checkTime(h);
+    m = checkTime(m);
+    s = checkTime(s);
+    txt.innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+    
+}
+  
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+	<div id="time"></div>
+	<div id="txt"></div>
+
+<script>
+ var time = document.getElementById("time");
+	time.innerHTML = Date();
+</script>
+
+</body>
+</html>

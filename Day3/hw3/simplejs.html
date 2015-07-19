@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title> Simple JS</title>
+	<style>
+		.box{
+			border:1px solid red;
+			width:300px;
+			height:100px;
+			
+			margin:0 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1" style="border:1px solid red;width:300px;height:100px;float:left;margin:0 5px;">
+	</div>
+	<div id="box" style="border:1px solid green;width:300px;height:100px;float:left">
+	</div>
+	<div style="clear:both">
+	</div>
+	
+	<div id="mybox"></div>
+	<script>	
+	var mybox = document.getElementById("mybox");
+	var  i= 0;
+	var colors = ["red","green","blue","cyan","magenta","yellow"];
+	mybox.style.border="1px solid purple";
+	mybox.style.width="300px";
+	mybox.style.height="100px";
+	mybox.style.margin="0 5px";
+	
+	setInterval(function(){
+		mybox.style.background = colors[i];
+		i++;
+		if(i==colors.length){
+			i=0;
+		}
+	},100);
+
+	</script>
+</body>
+</html>	

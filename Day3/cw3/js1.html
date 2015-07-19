@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>
+Javascript Example 1
+
+
+
+</title>
+
+<style>
+
+.box{
+	border:1px solid green;height:100px;width:300px;margin:0 5px;
+}
+</style>
+</head>
+<body>
+
+<div id="box" style="border:1px solid green;height:100px;width:300px;float:left;margin:0 5px"></div>
+<div  style="border:1px solid red;height:100px;width:300px;float:left"></div>
+<div style="clear:both"></div>
+Hello world
+
+<div class="box">hello </div>
+
+<div id="mybox">asdfasdfasd</div>
+
+
+<script>
+
+
+var colors=["red","green","lime","yellow","purple"];
+
+
+var box=document.getElementById("mybox");
+
+box.style.border="3px solid black";
+box.style.height="100px";
+box.style.width="300px";
+box.style.margin="0 5px";
+
+	var i=0;
+
+	setInterval(function(){
+	box.style.background=colors[i];
+	i++;
+
+	if(i==colors.length){
+		i=0;
+	}
+
+},100);
+
+		setInterval(function(){
+	document.body.style.background=colors[i];
+	i++;
+
+	if(i==colors.length){
+		i=0;
+	}
+
+},100);
+
+
+
+
+
+</script>
+
+</body>
+</html>
