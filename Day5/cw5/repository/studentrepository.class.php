@@ -47,8 +47,6 @@ class StudentRepository{
 		}
 
 		return $student;
-
-
 	}
 
 

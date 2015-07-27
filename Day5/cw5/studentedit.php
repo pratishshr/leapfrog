@@ -21,7 +21,7 @@
 
 
 	$std=$repository->get_by_id($_GET['id']);
-
+	
 	if(is_null($std)){
 		header("location:student.php");
 		exit;
