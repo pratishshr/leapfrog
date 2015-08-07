@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Students table</title>
+	<title>Shopping Test</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="<?php echo BASE_URL;?>/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo BASE_URL;?>/assets/css/custom.css">

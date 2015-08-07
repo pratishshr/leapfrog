@@ -32,8 +32,11 @@
 				//store file
 				$filename = $_FILES['image']['name'];
 				$path = ROOT_PATH. "/uploads/";
-				move_uploaded_file($_FILES	['image']['tmp_name'], $path.$filename);
-				$product->set_image($path.$filename);
+				
+				move_uploaded_file($_FILES['image']['tmp_name'], $path.$filename);
+				
+				$savepath = BASE_URL."/uploads/";
+				$product->set_image($savepath.$filename);
 				$product->set_details($_POST['details']);
 
 				return $product;
