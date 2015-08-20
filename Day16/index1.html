@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Angular Js Example</title>
+<script src="js/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+<input type="text" name="product" ng-model="product"/>
+<div ng-controller="HelloController">
+<input type="text" name="product" ng-model="product"/><input type="text" name="quantity" ng-model="quantity"/>
+<input type="text" name="price" ng-model="price"/>
+<span ng-bind="subtotal()"></span>
+<input type="button" name="btn" ng-click="doSomething()" value="Click Me" />
+
+<ul>
+<li ng-repeat="x in nameList">
+{{x}}
+</li>
+</ul>
+
+
+
+</div>
+</body>
+
+<script>
+var app=angular.module("myapp",[]);
+
+app.controller("HelloController",function($scope){
+
+	$scope.product="Samsung Galaxy";
+	$scope.quantity=2;
+	$scope.price=20000;
+	$scope.subtotal=function(){
+		return $scope.quantity * $scope.price;
+	};
+
+	$scope.doSomething=function(){
+		alert("Did doSomething");
+	};
+
+	$scope.nameList=["Sujan","Jay","Marjina","Anuj"];
+
+});
+
+
+</script>
+
+</html>

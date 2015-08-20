@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Angular Js Example</title>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+</head>
+<body ng-app="myapp">
+<div ng-view="" class="container"></div>
+
+
+</body>
+
+<script>
+var app=angular.module("myapp",['ngRoute']);
+
+app.config(function($routeProvider){
+	$routeProvider.when("/",{
+		templateUrl:"partials/student/index.html",
+		controller:"StudentController"
+	});
+
+	$routeProvider.when("/student/edit/:id",{
+		templateUrl:"partials/student/detail.html",
+		controller:"StudentEditContl"
+	});
+
+
+
+});
+
+app.factory("StudentService",function($http){
+	var output={};
+
+	output.getAll=function(){
+		return $http.get("student.php");
+	}
+
+	output.getById=function(id){
+		
+		return $http.get("student.php?id="+id);
+
+	};
+
+	return output;
+});
+
+app.controller("StudentController",function($scope,StudentService){
+	StudentService.getAll().then(function(result){
+		$scope.studentList=result.data;
+	});
+});
+
+app.controller("StudentEditContl",function($scope,StudentService,$routeParams,$http,$location){
+	$scope.form={};
+
+	StudentService.getById($routeParams["id"]).then(function(data){
+		$scope.form=data.data;
+	});
+
+	$scope.save=function(){
+		$http.post("student.php",$scope.form).success(function(data){
+			$location.path("/");
+		}).error(function(data){
+			alert("test");
+		});
+	};
+
+});
+
+
+
+</script>
+
+
+
+
+
+</html>

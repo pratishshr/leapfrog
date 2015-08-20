@@ -15,7 +15,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="<?php echo BASE_URL.'/customer/index.php?page=customer';?>">Home</a></li>
-      </ul>
+     
+
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo BASE_URL.'/customer/index.php?page=customer';?>">All Products</a></li>
+            <li><a href="<?php echo BASE_URL.'/customer/index.php?page=customer&m=elex';?>">Electronics</a></li>
+            <li><a href="<?php echo BASE_URL.'/customer/index.php?page=customer&m=mobile';?>">Mobile</a></li>
+            <li><a href="<?php echo BASE_URL.'/customer/index.php?page=customer&m=clothes';?>">Clothes</a></li>
+          </ul>
+        </li>
+       </ul> 
       
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

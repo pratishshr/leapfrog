@@ -9,7 +9,7 @@
     $_SESSION['login'] = $user->check_login($_POST['username'],$_POST['password']);
     if($_SESSION['login']){
       $_SESSION['username'] = $_POST['username'];
-      header("Location: index.php?page=admin");
+      header("Location: ../customer/index.php?page=customer");
       exit;
     }
    }

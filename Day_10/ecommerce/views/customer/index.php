@@ -1,5 +1,6 @@
 <div class="page-header">
   <h1> WELCOME TO THIS TEST SHOPPING SITE!</h1>
+  <h2> All Products </h2>
 </div>
 
 <div class="row">

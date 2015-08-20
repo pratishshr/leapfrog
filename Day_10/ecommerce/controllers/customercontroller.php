@@ -11,6 +11,18 @@
 		public function index(){
 			include(ROOT_PATH."/views/customer/index.php");
 		}
+
+		public function elex(){
+			include(ROOT_PATH."/views/customer/electronics.php");
+		}
+
+		public function clothes(){
+			include(ROOT_PATH."/views/customer/clothes.php");
+		}
+
+		public function mobile(){
+			include(ROOT_PATH."/views/customer/mobile.php");
+		}
 	}
 
 	$customercontroller = new CustomerController();
@@ -24,6 +36,18 @@
 	switch($method){
 		case 'index':
 		$customercontroller->index();
+		break;
+
+		case 'elex':
+		$customercontroller->elex();
+		break;
+
+		case 'clothes':
+		$customercontroller->clothes();
+		break;
+
+		case 'mobile':
+		$customercontroller->mobile();
 		break;
 
 		default: 

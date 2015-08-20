@@ -1,0 +1,14 @@
+<table class="table table-stripped table-hover">
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Email</th>
+<th>Status</th>
+</tr>
+<tr ng-repeat="student in studentList">
+<td>{{student.id}}</td>
+<td><a href="#/student/edit/{{student.id}}">{{student.firstName}} {{student.lastName}}</a></td>
+<td>{{student.email}}</td>
+<td> {{student.status}}</td>
+</tr>
+</table>
